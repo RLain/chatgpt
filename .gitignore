@@ -1,0 +1,16 @@
+# package directories
+node_modules
+
+# environment variables
+.env
+
+# compiled files
+dist/
+
+# Serverless directories
+.serverless
+
+
+
+
+

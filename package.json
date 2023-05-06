@@ -1,0 +1,22 @@
+{
+  "name": "chatgpt",
+  "version": "1.0.0",
+  "description": "Playground for ChatGPT API",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RLain/chatgpt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RLain/chatgpt/issues"
+  },
+  "homepage": "https://github.com/RLain/chatgpt#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
