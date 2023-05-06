@@ -4,6 +4,27 @@ Playground for ChatGPT API
 
 ## Testing locally
 
+- Run $ `npm run start`. You will see the express app create:
+
+```
+> chatgpt@1.0.0 start
+> nodemon ./src/index.ts
+
+[nodemon] 2.0.22
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: ts,json
+[nodemon] starting `ts-node ./src/index.ts`
+kicked off
+Server started on port 3000
+```
+
+- Invoke the endpoint e.g. $ `curl -X POST http://localhost:3000/query -H 'Content-Type: application/json' -d '{"message": "hello"}'`
+
+## Using Serverless offline
+
+🚨 Not yet finished setting up: WIP
+
 - Run $ `npm run local`. You will see the localhost set up
 
 ```
