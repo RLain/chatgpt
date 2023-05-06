@@ -50,9 +50,6 @@ app.post('/query', function (req, res) {
       max_tokens: 100,
     }),
   };
-
-  console.log(options);
-
   request.post('https://api.openai.com/v1/completions', options, function (err, response, body) {
     console.log('reached post');
     if (err) {
@@ -61,6 +58,27 @@ app.post('/query', function (req, res) {
     }
     const data = JSON.parse(body);
     console.log(data);
+    // {
+    //   id: 'cmpl-7D79pHlhXpnsernSuu4hsjOLxt8Wy',
+    //   object: 'text_completion',
+    //   created: 1683360133,
+    //   model: 'text-davinci-003',
+    //   choices: [
+    //     {
+    //       text: '\n' +
+    //         '\n' +
+    //         'The old house on the edge of town had been abandoned for years. It had been the home of a family of five, until one fateful night when a fire claimed the lives of all but one of them. The sole survivor was the youngest child, a young girl named Mary.\n' +
+    //         '\n' +
+    //         'Mary had never been the same since that night. She had withdrawn into her shell, refusing to speak or interact with anyone. When her family had died, so had her spirit.\n' +
+    //         '\n' +
+    //         'As the',
+    //       index: 0,
+    //       logprobs: null,
+    //       finish_reason: 'length'
+    //     }
+    //   ],
+    //   usage: { prompt_tokens: 9, completion_tokens: 100, total_tokens: 109 }
+    // }
 
     // Check if the ChatGPT API returned an error
     if (data.error) {
