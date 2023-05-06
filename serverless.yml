@@ -5,6 +5,7 @@ provider:
   name: aws
   runtime: nodejs18.x
   profile: RebeccaPersonal
+  region: af-south-1
 
 plugins:
   - serverless-offline
