@@ -1,0 +1,18 @@
+service: chat-gpt-app
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  profile: RebeccaPersonal
+
+plugins:
+  - serverless-offline
+
+functions:
+  api:
+    handler: src/index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get

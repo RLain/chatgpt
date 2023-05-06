@@ -4,7 +4,14 @@
   "description": "Playground for ChatGPT API",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "build": "tsc",
+    "start": "nodemon ./src/index.ts",
+    "start:prod": "npm run build && node dist/src/index.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "local": "npm run build && npx serverless offline",
+    "deploy:prod": "npm run build && npx serverless deploy"
   },
   "repository": {
     "type": "git",
@@ -17,6 +24,7 @@
   },
   "homepage": "https://github.com/RLain/chatgpt#readme",
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "serverless-offline": "^12.0.4"
   }
 }
