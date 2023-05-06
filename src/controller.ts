@@ -14,6 +14,7 @@ const CHATGPT_API_KEY = process.env.CHATGPT_API_KEY;
 
 // API request to ChatGPT
 app.post('/query', function (req, res) {
+  console.info('reached application');
   // Check if the query and sessionId parameters are present
   if (!req.body.query || !req.body.sessionId) {
     return res.status(400).send('Missing parameters: query and sessionId are required');
@@ -28,26 +29,31 @@ app.post('/query', function (req, res) {
     body: JSON.stringify({
       query: req.body.query,
       sessionId: req.body.sessionId,
+      model: 'gpt-3.5-turbo',
+      messages: [{ role: 'user', content: 'Say this is a test!' }],
+      temperature: 0.7,
     }),
   };
 
-  request.post(options, function (err, response, body) {
-    if (err) {
-      console.log(err);
-      return res.status(500).send(err);
-    }
+  console.log(options);
 
-    const data = JSON.parse(body);
+  //   request.post(options, function (err, response, body) {
+  //     if (err) {
+  //       console.log(err);
+  //       return res.status(500).send(err);
+  //     }
 
-    // Check if the ChatGPT API returned an error
-    if (data.error) {
-      console.log(data.error);
-      return res.status(500).send(data.error);
-    }
+  //     const data = JSON.parse(body);
 
-    // Return the response from the ChatGPT API to the client
-    return res.status(200).send(data.response);
-  });
+  //     // Check if the ChatGPT API returned an error
+  //     if (data.error) {
+  //       console.log(data.error);
+  //       return res.status(500).send(data.error);
+  //     }
+
+  //     // Return the response from the ChatGPT API to the client
+  //     return res.status(200).send(data.response);
+  //   });
 });
 
 // Start the server

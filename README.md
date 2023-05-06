@@ -2,6 +2,30 @@
 
 Playground for ChatGPT API
 
+## Testing locally
+
+- Run $ `npm run local`. You will see the localhost set up
+
+```
+Starting Offline at stage dev (af-south-1)
+
+Offline [http for lambda] listening on http://localhost:3002
+Function names exposed for local invocation by aws-sdk:
+           * handler: chat-gpt-app-dev-handler
+
+┌────────────────────────────────────────────────────────────────┐
+│                                                                │
+│   POST | http://localhost:3000/                                │
+│   POST | http://localhost:3000/2015-03-31/functions/handler/   │
+│   invocations                                                  │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
+Server ready: http://localhost:3000 🚀
+```
+
+- Invoke the endpoint e.g. $ `curl -X POST http://localhost:3000/query -H 'Content-Type: application/json' -d '{"message": "hello"}'`
+
 ## Useful links
 
 - https://platform.openai.com/playground
