@@ -23,7 +23,6 @@ const app = express();
 
 // Use the body-parser middleware to parse incoming request bodies
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
 
 // Replace the ChatGPT API URL with your own
 const CHATGPT_API_KEY = process.env.CHATGPT_API_KEY;
